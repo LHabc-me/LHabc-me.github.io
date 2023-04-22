@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-1241fa8a","path":"/%E4%BB%A3%E7%A0%81/","title":"代码","lang":"zh-CN","frontmatter":{"title":"代码","article":false,"feed":false,"sitemap":false},"headers":[],"git":{},"readingTime":{"minutes":0,"words":1},"filePathRelative":null,"excerpt":""}');export{e as data};
