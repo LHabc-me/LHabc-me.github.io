@@ -1,2 +1,0 @@
-"use strict";(self["webpackChunkweb_design_static"]=self["webpackChunkweb_design_static"]||[]).push([[801],{801:function(e,n,t){t.r(n),t.d(n,{default:function(){return c}});var r=t(3396);function u(e,n,t,u,i,s){return(0,r.wg)(),(0,r.iD)("h1",null,"Home")}var i={name:"HomeView"},s=t(89);const a=(0,s.Z)(i,[["render",u]]);var c=a}}]);
-//# sourceMappingURL=801.b3300e1b.js.map
