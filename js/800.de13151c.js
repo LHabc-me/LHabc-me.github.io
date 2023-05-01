@@ -1,2 +1,0 @@
-"use strict";(self["webpackChunkweb_design_static"]=self["webpackChunkweb_design_static"]||[]).push([[800],{9800:function(e,n,t){t.r(n),t.d(n,{default:function(){return a}});var r=t(3396);function u(e,n,t,u,s,c){return(0,r.wg)(),(0,r.iD)("h1",null,"Home")}var s={name:"HomeView",components:{},setup(){return{}}},c=t(89);const i=(0,c.Z)(s,[["render",u]]);var a=i}}]);
-//# sourceMappingURL=800.de13151c.js.map
