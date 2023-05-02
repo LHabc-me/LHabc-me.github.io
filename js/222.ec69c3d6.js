@@ -1,2 +1,0 @@
-"use strict";(self["webpackChunkweb_design_static"]=self["webpackChunkweb_design_static"]||[]).push([[222],{9222:function(e,n,t){t.r(n),t.d(n,{default:function(){return a}});var r=t(3396);function i(e,n,t,i,c,s){return(0,r.wg)(),(0,r.iD)("div")}var c={name:"ArchiveTwo"},s=t(89);const u=(0,s.Z)(c,[["render",i]]);var a=u}}]);
-//# sourceMappingURL=222.ec69c3d6.js.map
