@@ -1,2 +1,0 @@
-"use strict";(self["webpackChunkweb_design_static"]=self["webpackChunkweb_design_static"]||[]).push([[958],{8958:function(n,e,t){t.r(e),t.d(e,{default:function(){return l}});var s=t(3396);const i=(0,s._)("h1",null,"Friends",-1),r=[i];function u(n,e,t,i,u,c){return(0,s.wg)(),(0,s.iD)("div",null,r)}var c={name:"FriendsView",mounted(){console.log(123)}},a=t(89);const d=(0,a.Z)(c,[["render",u]]);var l=d}}]);
-//# sourceMappingURL=958.6028d155.js.map
