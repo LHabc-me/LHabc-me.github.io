@@ -1,8 +1,73 @@
-import { u as useRules, V as VCard, a as VCardActions, b as VSpacer, c as VDialog, d as dialogConfirm } from "./VDialog-5c8e4da2.js";
-import { e as defineStore, y as ref, n as computed, o as openBlock, c as createElementBlock, a as createVNode, w as withCtx, b as createTextVNode, d as createBaseVNode, ax as toDisplayString, a4 as Fragment, av as renderList, aw as createBlock, as as unref, au as block0 } from "./index-e8705b08.js";
-import { k as VCol, l as VRow, e as VTextField } from "./VTextField-6542153f.js";
-import { V as VBtn } from "./VBtn-4f6b1375.js";
-import "./position-c77b8d2a.js";
+import { u as useRules, V as VCard, a as VCardActions, b as VSpacer, c as VDialog, d as dialogConfirm } from "./VDialog-655d7923.js";
+import { p as propsFactory, X as omit, l as genericComponent, J as useProxiedModel, Z as getUid, L as computed, u as useRender, an as filterInputAttrs, a as createVNode, W as mergeProps, e as defineStore, _ as ref, o as openBlock, c as createElementBlock, w as withCtx, b as createTextVNode, d as createBaseVNode, au as toDisplayString, T as Fragment, as as renderList, at as createBlock, ap as unref, av as createCommentVNode, ar as block0 } from "./index-8021c353.js";
+import { e as makeVInputProps, h as useFocus, i as VInput, j as VCol, k as VRow, d as VTextField } from "./VTextField-d91261c1.js";
+import { V as VBtn } from "./VBtn-50bfd7ea.js";
+import { b as makeVCheckboxBtnProps, V as VCheckboxBtn } from "./VCheckboxBtn-a708d9a6.js";
+import "./position-eeb180c1.js";
+const VCheckbox$1 = "";
+const makeVCheckboxProps = propsFactory({
+  ...makeVInputProps(),
+  ...omit(makeVCheckboxBtnProps(), ["inline"])
+}, "VCheckbox");
+const VCheckbox = genericComponent()({
+  name: "VCheckbox",
+  inheritAttrs: false,
+  props: makeVCheckboxProps(),
+  emits: {
+    "update:modelValue": (value) => true,
+    "update:focused": (focused) => true
+  },
+  setup(props, _ref) {
+    let {
+      attrs,
+      slots
+    } = _ref;
+    const model = useProxiedModel(props, "modelValue");
+    const {
+      isFocused,
+      focus,
+      blur
+    } = useFocus(props);
+    const uid = getUid();
+    const id = computed(() => props.id || `checkbox-${uid}`);
+    useRender(() => {
+      const [inputAttrs, controlAttrs] = filterInputAttrs(attrs);
+      const [inputProps, _1] = VInput.filterProps(props);
+      const [checkboxProps, _2] = VCheckboxBtn.filterProps(props);
+      return createVNode(VInput, mergeProps({
+        "class": ["v-checkbox", props.class]
+      }, inputAttrs, inputProps, {
+        "modelValue": model.value,
+        "onUpdate:modelValue": ($event) => model.value = $event,
+        "id": id.value,
+        "focused": isFocused.value,
+        "style": props.style
+      }), {
+        ...slots,
+        default: (_ref2) => {
+          let {
+            id: id2,
+            messagesId,
+            isDisabled,
+            isReadonly
+          } = _ref2;
+          return createVNode(VCheckboxBtn, mergeProps(checkboxProps, {
+            "id": id2.value,
+            "aria-describedby": messagesId.value,
+            "disabled": isDisabled.value,
+            "readonly": isReadonly.value
+          }, controlAttrs, {
+            "modelValue": model.value,
+            "onUpdate:modelValue": ($event) => model.value = $event,
+            "onFocus": focus,
+            "onBlur": blur
+          }), slots);
+        }
+      });
+    });
+    return {};
+  }
+});
 const useCalculatorList = defineStore("calculatorList", {
   state: () => {
     return {
@@ -28025,26 +28090,28 @@ var utils = {
     SHEET_VERY_HIDDEN: 2
   }
 };
-const _hoisted_1 = { class: "pa-10" };
+const _hoisted_1 = { class: "pa-10 pt-5" };
 const _hoisted_2 = { class: "mx-auto" };
 const _hoisted_3 = { class: "primary-color" };
 const _hoisted_4 = /* @__PURE__ */ createBaseVNode("div", {
   class: "mx-auto",
   style: { "opacity": "0.8" }
 }, " (注：未填写绩点时，按成绩向下取整根据规则计算绩点) ", -1);
-const _hoisted_5 = /* @__PURE__ */ createBaseVNode("div", { style: { "opacity": "0.7" } }, [
-  /* @__PURE__ */ createTextVNode(" 注：行号支持以下格式"),
-  /* @__PURE__ */ createBaseVNode("br"),
-  /* @__PURE__ */ createTextVNode("        7表示第7行"),
-  /* @__PURE__ */ createBaseVNode("br"),
-  /* @__PURE__ */ createTextVNode("        *表示所有行"),
-  /* @__PURE__ */ createBaseVNode("br"),
-  /* @__PURE__ */ createTextVNode("        7-9表示7到9行"),
-  /* @__PURE__ */ createBaseVNode("br"),
-  /* @__PURE__ */ createTextVNode("        7,9表示7和9行"),
-  /* @__PURE__ */ createBaseVNode("br"),
-  /* @__PURE__ */ createTextVNode("        7,9-11表示7和9到11行 ")
-], -1);
+const _hoisted_5 = { style: { "margin-top": "-20px", "display": "flex", "flex-direction": "row", "justify-content": "flex-start", "align-items": "center" } };
+const _hoisted_6 = { style: { "flex": "100" } };
+const _hoisted_7 = {
+  key: 1,
+  style: { "text-align": "center", "margin-top": "20px", "font-size": "20px" }
+};
+const _hoisted_8 = {
+  key: 2,
+  style: { "opacity": "0.7" }
+};
+const _hoisted_9 = /* @__PURE__ */ createBaseVNode("br", null, null, -1);
+const _hoisted_10 = /* @__PURE__ */ createBaseVNode("br", null, null, -1);
+const _hoisted_11 = /* @__PURE__ */ createBaseVNode("br", null, null, -1);
+const _hoisted_12 = /* @__PURE__ */ createBaseVNode("br", null, null, -1);
+const _hoisted_13 = /* @__PURE__ */ createBaseVNode("br", null, null, -1);
 const _sfc_main = {
   __name: "index",
   setup(__props) {
@@ -28064,7 +28131,8 @@ const _sfc_main = {
             course: item["课程名"],
             score: item["总成绩"],
             credit: item["学分"],
-            gpa: item["绩点"]
+            gpa: item["绩点"],
+            checked: false
           });
         }
       };
@@ -28130,7 +28198,20 @@ const _sfc_main = {
       dialog.value.show = true;
     }
     function dialogClick() {
+      if (dialog.value.action === "delete") {
+        dialog.value.content = lines.list.map((item, index) => item.checked ? index + 1 : null).filter((item) => item !== null).join(",");
+      }
       dialogConfirm(dialog.value, lines);
+    }
+    function selectAll() {
+      for (const item of lines.list) {
+        item.checked = true;
+      }
+    }
+    function unselectAll() {
+      for (const item of lines.list) {
+        item.checked = false;
+      }
     }
     return (_ctx, _cache) => {
       return openBlock(), createElementBlock("div", _hoisted_1, [
@@ -28159,7 +28240,7 @@ const _sfc_main = {
                   onClick: deleteLine
                 }, {
                   default: withCtx(() => [
-                    createTextVNode("删除")
+                    createTextVNode("删除选中行")
                   ]),
                   _: 1
                 })
@@ -28209,6 +28290,31 @@ const _sfc_main = {
         }),
         createVNode(VRow, null, {
           default: withCtx(() => [
+            createVNode(VBtn, {
+              color: "primary",
+              variant: "text",
+              onClick: selectAll
+            }, {
+              default: withCtx(() => [
+                createTextVNode("选择全部")
+              ]),
+              _: 1
+            }),
+            createVNode(VBtn, {
+              color: "primary",
+              variant: "text",
+              onClick: unselectAll
+            }, {
+              default: withCtx(() => [
+                createTextVNode("取消全部")
+              ]),
+              _: 1
+            })
+          ]),
+          _: 1
+        }),
+        createVNode(VRow, null, {
+          default: withCtx(() => [
             createVNode(VCol, { cols: 2.4 }, {
               default: withCtx(() => [
                 createTextVNode("行号")
@@ -28247,7 +28353,16 @@ const _sfc_main = {
             default: withCtx(() => [
               createVNode(VCol, { cols: 2.4 }, {
                 default: withCtx(() => [
-                  createTextVNode(toDisplayString(index + 1), 1)
+                  createBaseVNode("div", _hoisted_5, [
+                    createVNode(VCheckbox, {
+                      modelValue: item.checked,
+                      "onUpdate:modelValue": ($event) => item.checked = $event,
+                      label: "",
+                      color: "primary",
+                      "hide-details": ""
+                    }, null, 8, ["modelValue", "onUpdate:modelValue"]),
+                    createBaseVNode("div", _hoisted_6, toDisplayString(index + 1), 1)
+                  ])
                 ]),
                 _: 2
               }, 1024),
@@ -28319,13 +28434,27 @@ const _sfc_main = {
           default: withCtx(() => [
             createVNode(VCard, null, {
               default: withCtx(() => [
-                createVNode(VTextField, {
+                dialog.value.action === "add" ? (openBlock(), createBlock(VTextField, {
+                  key: 0,
                   modelValue: dialog.value.content,
                   "onUpdate:modelValue": _cache[1] || (_cache[1] = ($event) => dialog.value.content = $event),
                   color: "primary",
                   label: "行号"
-                }, null, 8, ["modelValue"]),
-                _hoisted_5,
+                }, null, 8, ["modelValue"])) : createCommentVNode("", true),
+                dialog.value.action === "delete" ? (openBlock(), createElementBlock("div", _hoisted_7, " 确定要删除吗？ ")) : createCommentVNode("", true),
+                dialog.value.action === "add" ? (openBlock(), createElementBlock("div", _hoisted_8, [
+                  createTextVNode(" 注：行号支持以下格式"),
+                  _hoisted_9,
+                  createTextVNode("        7表示第7行"),
+                  _hoisted_10,
+                  createTextVNode("        *表示所有行"),
+                  _hoisted_11,
+                  createTextVNode("        7-9表示7到9行"),
+                  _hoisted_12,
+                  createTextVNode("        7,9表示7和9行"),
+                  _hoisted_13,
+                  createTextVNode("        7,9-11表示7和9到11行 ")
+                ])) : createCommentVNode("", true),
                 createVNode(VCardActions, null, {
                   default: withCtx(() => [
                     createVNode(VSpacer),
